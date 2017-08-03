@@ -13,7 +13,7 @@ then
 	fi
 	cd /home/ubuntu/DeployUMP/
 	wget http://10.84.20.62:8081/repository/maven-snapshots/vn/vnpt/ssdc/ump-webapp/1.0-SNAPSHOT/$2.war
-    mv $2.war $filename
+    	mv $2.war $filename
 else
 	deployDir="/home/ubuntu/DeployUMP/"
 	filename="ump-backend-1.0.jar"
