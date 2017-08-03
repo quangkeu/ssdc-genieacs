@@ -30,16 +30,16 @@ else
 	#copy backend project to build liquibase
 	mkdir -p /home/ubuntu/DeployUMP/source/ump-backend
 
-	#cd /tmp/
-	#git clone https://github.com/quangkeu/jenkins-k8s.git
-	cp  cp -r /tmp/jenkins-k8s/ump/ump-backend/src /home/ubuntu/DeployUMP/source/ump-backend
-	cp /tmp/jenkins-k8s/ump/ump-backend/pom.xml /home/ubuntu/DeployUMP/source/ump-backend
+	cd /tmp/
+	git clone https://github.com/quangkeu/ump-backend.git
+	cp  cp -r /tmp/ump-backend/src /home/ubuntu/DeployUMP/source/ump-backend
+	cp /tmp/ump-backend/pom.xml /home/ubuntu/DeployUMP/source/ump-backend
 	
 
 	#buid ump-backend project for update database
 	cd /home/ubuntu/DeployUMP/source/ump-backend
 	mvn liquibase:update
-	mv $2.war $filename
+	mv $2.jar $filename
 fi
 
 destination_file_path=$deployDir$filename
