@@ -4,7 +4,7 @@ echo "excute_on_qa:type = $type"
 if [ "$type" = "webapp" ]
 then
 	deployDir="/home/ubuntu/DeployUMP/"
-	filename=$APP_NAME
+	filename="ump-webapp-1.0-SNAPSHOT.war"
 	filelog="webapp.log"
 	
 	#copy ump-webapp-1.0-SNAPSHOT.war file
@@ -12,8 +12,8 @@ then
 	   mkdir -p /home/ubuntu/DeployUMP
 	fi
 	cd /home/ubuntu/DeployUMP/
-	wget http://10.84.20.62:8081/repository/maven-snapshots/vn/vnpt/ssdc/ump-webapp/1.0-SNAPSHOT/$2.war
-    	mv $2.war $filename
+	wget http://10.84.20.62:8081/repository/maven-snapshots/vn/vnpt/ssdc/ump-webapp/1.0-SNAPSHOT/$APP_NAME.war
+    	mv $APP_NAME.war $filename
 else
 	deployDir="/home/ubuntu/DeployUMP/"
 	filename="ump-backend-1.0.jar"
@@ -24,7 +24,7 @@ else
 	#copy ump-backend-1.0-SNAPSHOT.jar file
 	# "ump@2016" is password of 10.84.20.138
 	cd /home/ubuntu/DeployUMP/
-	wget http://10.84.20.62:8081/repository/maven-snapshots/vn/vnpt/ssdc/ump-backend/1.0-SNAPSHOT/$2.jar
+	wget http://10.84.20.62:8081/repository/maven-snapshots/vn/vnpt/ssdc/ump-backend/1.0-SNAPSHOT/$APP_NAME.jar
 	mv $2.jar $filename
 	
 	#copy backend project to build liquibase
@@ -39,7 +39,7 @@ else
 	#buid ump-backend project for update database
 	cd /home/ubuntu/DeployUMP/source/ump-backend
 	mvn liquibase:update
-	mv $2.jar $filename
+	mv $APP_NAME.jar $filename
 fi
 
 destination_file_path=$deployDir$filename
