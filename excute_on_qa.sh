@@ -32,7 +32,7 @@ else
 
 	cd /tmp/
 	git clone https://github.com/quangkeu/ump-backend.git
-	cp  cp -r /tmp/ump-backend/src /home/ubuntu/DeployUMP/source/ump-backend
+	cp -r /tmp/ump-backend/src /home/ubuntu/DeployUMP/source/ump-backend
 	cp /tmp/ump-backend/pom.xml /home/ubuntu/DeployUMP/source/ump-backend
 	
 
