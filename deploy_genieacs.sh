@@ -43,11 +43,3 @@ BUILD_ID=dontKillMe nohup node genieacs-nbi > $DEPLOY_FOLDER/logs/nbi.out 2>&1&
                 kill -9 $PID
         fi
 BUILD_ID=dontKillMe nohup node genieacs-fs > $DEPLOY_FOLDER/logs/fs.out 2>&1&
-
-if [[ $1 == "-d" ]]; then
-  while true; do sleep 1000; done
-fi
-
-if [[ $1 == "-bash" ]]; then
-  /bin/bash
-fi
