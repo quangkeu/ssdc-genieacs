@@ -1,5 +1,5 @@
 #!/bin/sh
-type=$1
+type=$APP_TYPE
 echo "excute_on_qa:type = $type"
 if [ "$type" = "webapp" ]
 then
