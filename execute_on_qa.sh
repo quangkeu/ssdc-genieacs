@@ -4,7 +4,7 @@ echo "excute_on_qa:type = $type"
 if [ "$type" = "webapp" ]
 then
 	deployDir="/home/ubuntu/DeployUMP/"
-	filename="ump-webapp-1.0-SNAPSHOT.war"
+	filename=$APP_NAME
 	filelog="webapp.log"
 	
 	#copy ump-webapp-1.0-SNAPSHOT.war file
