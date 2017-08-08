@@ -14,6 +14,6 @@ RUN chmod +x /home/ubuntu/ump-conf/deploy_genieacs.sh \
 && chmod +x /home/ubuntu/ump-conf/execute_on_qa.sh \
 && chmod +x /home/ubuntu/ump-conf/entrypoint.sh
 
-CMD [".home/ubuntu/ump-conf/entrypoint.sh"]
+CMD ["./home/ubuntu/ump-conf/entrypoint.sh"]
 
 EXPOSE 8080
