@@ -2,8 +2,6 @@ FROM 10.84.20.62:8082/admin/ump-runtime
 
 MAINTAINER QuangNL
 
-RUN apt-get install -y ca-certificates-java && update-ca-certificates -f
-
 RUN mkdir -p /home/ubuntu/DeployGenieacs/logs
 COPY /ump-conf /home/ubuntu/ump-conf
 COPY /ump-backend /tmp/ump-backend
