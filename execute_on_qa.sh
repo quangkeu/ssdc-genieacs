@@ -39,7 +39,6 @@ else
 	#buid ump-backend project for update database
 	cd /home/ubuntu/DeployUMP/source/ump-backend
 	mvn liquibase:update
-	mv $APP_NAME.jar $filename
 fi
 
 destination_file_path=$deployDir$filename
