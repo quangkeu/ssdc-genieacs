@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: jenkins
+  labels:
+    name: ump-app
+  name: ump-app
+spec:
+  type: NodePort
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    name: ump-webapp
+---
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  namespace: jenkins
+  labels:
+    name: ump-webapp
+  name: ump-rc
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: ump-webapp
+    spec:
+      containers:
+      - image: 10.84.20.62:8082/admin/ump-deploy-v1.1
+        name: ump-app
+        ports:
+        - name: ump-app
+          containerPort: 8080
+        env:
+        - name: WEBAPP_NAME
+          value: "ump-webapp-1.0-20170802.075505-1"
+        - name: BACKEND_NAME
+          value: "ump-backend-1.0-20170802.075129-1"
+        command: ["/bin/sh","-c"]
+        args: ["./home/ubuntu/ump-conf/entrypoint.sh"]
