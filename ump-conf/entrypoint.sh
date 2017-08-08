@@ -13,5 +13,5 @@ rabbitmqadmin -q import /home/ubuntu/ump-conf/rabbit.config
 sleep 5
 ./home/ubuntu/ump-conf/execute_on_qa.sh webapp 
 sleep 10
-/.home/ubuntu/ump-conf/execute_on_qa.sh backend 
+.home/ubuntu/ump-conf/execute_on_qa.sh backend 
 while true; do sleep 1000; done
