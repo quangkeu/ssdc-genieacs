@@ -12,7 +12,7 @@ then
 	   mkdir -p /home/ubuntu/DeployUMP/logs
 	fi
 	cd /home/ubuntu/DeployUMP/
-	wget http://10.84.20.62:8081/repository/maven-snapshots/vn/vnpt/ssdc/ump-webapp/1.0-SNAPSHOT/$WEBAPP_NAME.war
+	wget http://${NEXUS_SERVER}:8081/repository/maven-snapshots/vn/vnpt/ssdc/ump-webapp/1.0-SNAPSHOT/$WEBAPP_NAME.war
     	mv $WEBAPP_NAME.war $filename
 else 
 	deployDir="/home/ubuntu/DeployUMP/"
@@ -24,7 +24,7 @@ else
 	#copy ump-backend-1.0-SNAPSHOT.jar file
 	# "ump@2016" is password of 10.84.20.138
 	cd /home/ubuntu/DeployUMP/
-	wget http://10.84.20.62:8081/repository/maven-snapshots/vn/vnpt/ssdc/ump-backend/1.0-SNAPSHOT/$BACKEND_NAME.jar
+	wget http://${NEXUS_SERVER}:8081/repository/maven-snapshots/vn/vnpt/ssdc/ump-backend/1.0-SNAPSHOT/$BACKEND_NAME.jar
 	mv $BACKEND_NAME.jar $filename
 	
 	#copy backend project to build liquibase
