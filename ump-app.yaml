@@ -37,6 +37,6 @@ spec:
         - name: WEBAPP_NAME
           value: ${UMP_WEBAPP_FILE_NAME}
         - name: BACKEND_NAME
-          value: ${UMP_BACK_END_FILE_NAME}
+          value: ${UMP_BACKEND_FILE_NAME}
         command: ["/bin/sh","-c"]
         args: ["./home/ubuntu/ump-conf/entrypoint.sh"]
