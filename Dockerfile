@@ -1,10 +1,10 @@
-FROM 10.84.20.62:8082/admin/ump-runtime
+FROM 10.84.20.99:8082/ump-runtime
 
 MAINTAINER QuangNL
 
 RUN mkdir -p /home/ubuntu/DeployGenieacs/logs
-COPY /ump-conf /home/ubuntu/ump-conf
-COPY /ump-backend /tmp/ump-backend
+COPY ump-conf /home/ubuntu/ump-conf
+COPY ump-backend /tmp/ump-backend
 RUN mkdir -p /home/ubuntu/DeployGenieacs/logs
 RUN cd /home/ubuntu/ump-conf \
 && tar -xzf genieacs.tar.gz \
