@@ -28,15 +28,15 @@ spec:
         name: ump-webapp
     spec:
       containers:
-      - image: $NEXUS_SERVER:8082/admin/ump-deploy
+      - image: 10.84.20.99:8082/admin/ump-deploy
         name: ump-app
         ports:
         - name: ump-app
           containerPort: 8080
         env:
         - name: WEBAPP_NAME
-          value: ${UMP_WEBAPP_FILE_NAME}
+          value: "ump-webapp-1.0-20171016.024258-1"
         - name: BACKEND_NAME
-          value: ${UMP_BACKEND_FILE_NAME}
+          value: "ump-backend-1.0-20171016.024258-1"
         command: ["/bin/sh","-c"]
         args: ["./home/ubuntu/ump-conf/entrypoint.sh"]
