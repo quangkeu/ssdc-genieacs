@@ -28,7 +28,7 @@ spec:
         name: ump-webapp
     spec:
       containers:
-      - image: 10.84.20.99:8082/ump-deploy
+      - image: 10.84.20.99:8082/ump-deploy-v1.0
         name: ump-app
         ports:
         - name: ump-app
