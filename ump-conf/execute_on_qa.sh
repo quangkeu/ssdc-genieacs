@@ -1,6 +1,5 @@
 #!/bin/sh
 type=$1
-echo $2
 echo "excute_on_qa:type = $type"
 if [ "$type" = "webapp" ]
 then
@@ -13,7 +12,7 @@ then
 	   mkdir -p /home/ubuntu/DeployUMP/logs
 	fi
 	cd /home/ubuntu/DeployUMP/
-	wget http://10.84.20.99:8081/repository/maven-snapshots/vn/vnpt/ssdc/ump-webapp/1.0-SNAPSHOT/$WEBAPP_NAME.war
+	wget http://$2:8081/repository/maven-snapshots/vn/vnpt/ssdc/ump-webapp/1.0-SNAPSHOT/$WEBAPP_NAME.war
     	mv $WEBAPP_NAME.war $filename
 else 
 	deployDir="/home/ubuntu/DeployUMP/"
@@ -25,7 +24,7 @@ else
 	#copy ump-backend-1.0-SNAPSHOT.jar file
 	# "ump@2016" is password of 10.84.20.138
 	cd /home/ubuntu/DeployUMP/
-	wget http://10.84.20.99:8081/repository/maven-snapshots/vn/vnpt/ssdc/ump-backend/1.0-SNAPSHOT/$BACKEND_NAME.jar
+	wget http://$2:8081/repository/maven-snapshots/vn/vnpt/ssdc/ump-backend/1.0-SNAPSHOT/$BACKEND_NAME.jar
 	mv $BACKEND_NAME.jar $filename
 	
 	#copy backend project to build liquibase
