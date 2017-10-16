@@ -11,7 +11,7 @@ sleep 5
 rabbitmqadmin -q import /home/ubuntu/ump-conf/rabbit.config
 ./home/ubuntu/ump-conf/deploy_genieacs.sh
 sleep 5
-./home/ubuntu/ump-conf/execute_on_qa.sh webapp 
+./home/ubuntu/ump-conf/execute_on_qa.sh webapp 10.84.20.99
 sleep 10
-./home/ubuntu/ump-conf/execute_on_qa.sh backend 
+./home/ubuntu/ump-conf/execute_on_qa.sh backend 10.84.20.99
 while true; do sleep 1000; done
