@@ -28,7 +28,7 @@ spec:
         name: ump-webapp
     spec:
       containers:
-      - image: ${NEXUS_SERVER}:8082/admin/ump-deploy
+      - image: $NEXUS_SERVER:8082/admin/ump-deploy
         name: ump-app
         ports:
         - name: ump-app
